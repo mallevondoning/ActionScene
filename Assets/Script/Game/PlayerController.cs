@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,5 +24,16 @@ public class PlayerController : MonoBehaviour
     public void AddExplodeForce(float force,Vector3 center,float radius)
     {
         _playerRB.AddExplosionForce(force, center, radius, 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        EnemyController checkEC = other.gameObject.GetComponent<EnemyController>();
+        if (checkEC == null)
+        {
+            GameManager.Instance.StopGame();
+            DataManager.IsPlaying = false;
+            //SceneManager.LoadScene();
+        }
     }
 }

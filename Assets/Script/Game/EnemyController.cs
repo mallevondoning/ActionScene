@@ -14,7 +14,6 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     private PlayerController _player;
-    private Bomb _bomb;
 
     private bool _isShootingActive = false;
 
@@ -34,7 +33,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        _bomb = _bombObj.GetComponent<Bomb>();
+        transform.position = new Vector3(Random.Range(-14f, 15), 1, Random.Range(-14f, 15));
     }
 
     void Update()

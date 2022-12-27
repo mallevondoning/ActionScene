@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public bool IsPlaying { get; set; } = true;
-    
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private float _scorePerSec;
 
@@ -14,10 +12,14 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        if (IsPlaying)
+        if (DataManager.IsPlaying)
         {
             _score += _scorePerSec * Time.deltaTime;
             _scoreText.text = "Score: " + Mathf.FloorToInt(_score);
+        }
+        else
+        {
+            _score = DataManager.Score;
         }
     }
 }

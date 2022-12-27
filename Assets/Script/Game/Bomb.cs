@@ -28,10 +28,14 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.collider.isTrigger)
-        {
-            _player.AddExplodeForce(_explosionForce, transform.position, _explosionRadius);
-            StartCoroutine(_childEXP.Explode(gameObject));
-        }
+        _player.AddExplodeForce(_explosionForce, transform.position, _explosionRadius);
+        StartCoroutine(_childEXP.Explode(gameObject));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        EnemyController checkEC = other.gameObject.GetComponent<EnemyController>();
+        if (checkEC == null)
+            Destroy(gameObject);
     }
 }
