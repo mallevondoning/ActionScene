@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scene/MovementTest.unity
+    guid: 98e736b8664c9b048bcf3eced44da88f
+  - enabled: 1
+    path: Assets/Scene/ScoreScreen.unity
+    guid: e16168584b8f58b48a5483d01f5e26a6
   m_configObjects: {}

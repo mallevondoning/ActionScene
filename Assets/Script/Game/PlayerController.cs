@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.StopGame();
             DataManager.IsPlaying = false;
-            //SceneManager.LoadScene();
+            SceneManager.LoadScene("ScoreScreen");
         }
     }
 }

@@ -10,6 +10,12 @@ public class Score : MonoBehaviour
 
     private float _score;
 
+    private void Awake()
+    {
+        _score = 0f;
+        DataManager.Score = (int)_score;
+    }
+
     void Update()
     {
         if (DataManager.IsPlaying)
@@ -19,7 +25,7 @@ public class Score : MonoBehaviour
         }
         else
         {
-            _score = DataManager.Score;
+            DataManager.Score = Mathf.FloorToInt(_score);
         }
     }
 }
