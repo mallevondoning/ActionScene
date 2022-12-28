@@ -8,6 +8,7 @@ public class ScoreButton : MonoBehaviour
     public void StartOver()
     {
         SceneManager.LoadScene(0);
+        DataManager.IsPlaying = true;
     }
 
     public void QuitGame()
